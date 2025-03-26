@@ -3,32 +3,42 @@
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
+// Route::get('/', function () {
+//     return view('web.homepage');
+// });
+
 Route::get('/', function () {
-    return ('Halaman Utama');
+    $title = "Homepage";
+    return view('web.homepage', ['title' => $title]);
 });
 
-Route::get('/product', function () {
-    return ('Halaman Produk');
+
+Route::get('products', function () {
+    $title = "Products";
+    return view("web.products", ['title' => $title]);
 });
 
-Route::get('/payment', function () {
-    return ('Halaman Pembayaran');
+Route::get('product/{slug}', function ($slug) {
+    return "halaman single product - " . $slug;
 });
 
-Route::get('/keranjang', function () {
-    return ('keranjang belanja');
+Route::get('categories', function () {
+    return view("web.categories");
 });
 
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
-
-Route::middleware(['auth'])->group(function () {
-    Route::redirect('settings', 'settings/profile');
-
-    Volt::route('settings/profile', 'settings.profile')->name('settings.profile');
-    Volt::route('settings/password', 'settings.password')->name('settings.password');
-    Volt::route('settings/appearance', 'settings.appearance')->name('settings.appearance');
+Route::get('category/{slug}', function ($slug) {
+    return "halaman single category - " . $slug;
 });
 
-require __DIR__.'/auth.php';
+Route::get('cart', function () {
+    $title = "Cart";
+    return view("web.cart", ['title' => $title]);
+});
+
+Route::get('checkout', function () {
+    $title = "co";
+    return view("web.checkout", ['title' => $title]);
+});
+
+
+require __DIR__ . '/auth.php';
