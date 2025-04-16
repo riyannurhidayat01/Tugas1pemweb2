@@ -48,8 +48,6 @@ class HomepageController extends Controller
             ]
         ];
 
-
-
  {
  $categories = Categories::all();
 

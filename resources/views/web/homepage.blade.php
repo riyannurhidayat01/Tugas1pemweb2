@@ -1,4 +1,4 @@
-@php
+<!-- @php
     $cards = [
         [
             'img' => 'https://i.pinimg.com/736x/05/eb/9f/05eb9fada5c8b267b5414b7055eeed95.jpg',
@@ -25,7 +25,7 @@
             'btn' => 'Beli Sekarang'
         ],
     ];
-@endphp
+@endphp -->
 <x-layout>
  <div class="row">
  <h3>Categories</h3>
@@ -48,7 +48,7 @@ btn-primary">Detail</a>
 </x-layout>
 
 
-<x-layout>
+<!-- <x-layout>
     <div class="container py-5">
     <x-slot name="title">{{ $title ?? 'Default Title' }}</x-slot>
 
@@ -83,7 +83,7 @@ btn-primary">Detail</a>
         </div>
 
     </div>
-</x-layout>
+</x-layout> -->
 
 <script>
     const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
